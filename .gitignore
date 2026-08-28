@@ -1,0 +1,10 @@
+runs/
+__pycache__/
+*.pyc
+
+# pretrained base weights auto-downloaded by ultralytics at repo root (yolov8n-seg.pt etc.)
+/*.pt
+
+# per-run checkpoints under runs/ are already ignored above;
+# anything placed in weights/ is a deliberate "release" checkpoint, keep it tracked
+weights/yolo26n.pt

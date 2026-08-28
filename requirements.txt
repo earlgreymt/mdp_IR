@@ -1,0 +1,7 @@
+ultralytics>=8.3
+pyyaml
+opencv-python
+
+# torch/torchvision are NOT pinned here -- your RTX 5060 (Blackwell) needs a
+# CUDA 12.8 build. Install these two separately BEFORE this file, e.g.:
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu128
