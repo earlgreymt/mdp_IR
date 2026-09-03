@@ -17,7 +17,7 @@ from pathlib import Path
 
 from ultralytics import YOLO
 
-DATA_YAML = Path(r"C:\Users\ma0011in\mdp\data\data.yaml")
+DATA_YAML = Path(r"C:\Users\ma0011in\mdp\data_original\data.yaml")
 RUNS_DIR = Path(__file__).parent / "runs"
 
 
@@ -59,6 +59,11 @@ def main():
         project=str(RUNS_DIR),
         name=args.name,
         resume=args.resume,
+        # Classes are letters/digits/arrows -- orientation is part of the label
+        # (a mirrored G isn't a G, a mirrored "left" arrow IS a "right" arrow),
+        # so the default fliplr=0.5/flipud augmentation corrupts labels. Off.
+        fliplr=0.0,
+        flipud=0.0,
     )
 
 
